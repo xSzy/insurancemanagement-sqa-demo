@@ -1,0 +1,10 @@
+eclipse.preferences.version=1
+encoding//WebContent/WEB-INF/common/footer.jsp=UTF-8
+encoding//WebContent/WEB-INF/common/header.jsp=UTF-8
+encoding//WebContent/WEB-INF/common/navbar.jsp=UTF-8
+encoding//WebContent/WEB-INF/login.jsp=UTF-8
+encoding//src/qlbhxh/controller/LoginController.java=UTF-8
+encoding//src/qlbhxh/dao/FundDAO.java=UTF-8
+encoding//src/qlbhxh/services/InsuranceService.java=UTF-8
+encoding//src/qlbhxh/services/LoginService.java=UTF-8
+encoding//src/qlbhxh/services/TransactionService.java=UTF-8
