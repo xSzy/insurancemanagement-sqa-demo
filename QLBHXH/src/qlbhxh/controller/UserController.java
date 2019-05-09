@@ -21,9 +21,9 @@ public class UserController {
 	private UserService userService;
 	
 	@RequestMapping(value = "/userlist", method = RequestMethod.GET)
-	public String showUserList(@RequestParam int limit, Model model, RedirectAttributes redirect, HttpSession session)
+	public String showUserList(@RequestParam String insuranceType, Model model, RedirectAttributes redirect, HttpSession session)
 	{
-		List<User> result = userService.getAllUser(limit);
+		List<User> result = userService.getAllUser(insuranceType);
 		model.addAttribute("listUser", result);
 		return "userlist";
 	}

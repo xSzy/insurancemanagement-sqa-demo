@@ -30,19 +30,20 @@ public class UserDAO {
 	 * @param limit - number of user
 	 * @return list of users
 	 */
-	public List<User> getAllUser(int limit)
+	public List<User> getAllUser(String type)
 	{
-		if(limit <= 0)
-			limit = 1000;
 		List<User> result = new ArrayList<>();
 		try {
 			//sql command
-			String sql = "select * from user left join usertype on user.typeId = usertype.id limit 0, ?";
+			String sql = "select * from user "
+					+ "left join usertype on user.typeId = usertype.id "
+					+ "left join insurance on user.id = insurance.userId "
+					+ "where insurance.type = ?";
 			
 			//get database connection
 			conn = dataSource.getConnection();
 			PreparedStatement ps = conn.prepareStatement(sql);
-			ps.setInt(1, limit);
+			ps.setString(1, type);
 			
 			//execute query
 			ResultSet rs = ps.executeQuery();
@@ -64,9 +65,9 @@ public class UserDAO {
 				u.setInsuranceId(rs.getString("user.insuranceId"));
 				
 				//get user type
-				UserType type = new UserType();
-				type.setName(rs.getString("usertype.name"));
-				u.setType(type);
+				UserType utype = new UserType();
+				utype.setName(rs.getString("usertype.name"));
+				u.setType(utype);
 				
 				//add user to return list
 				result.add(u);

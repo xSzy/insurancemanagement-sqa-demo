@@ -29,8 +29,8 @@ public class UserService {
 	 * @param limit - number of users
 	 * @return list of users
 	 */
-	public List<User> getAllUser(int limit) {
-		return userDAO.getAllUser(limit);
+	public List<User> getAllUser(String type) {
+		return userDAO.getAllUser(type);
 	}
 	
 	

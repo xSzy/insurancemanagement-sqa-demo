@@ -31,12 +31,10 @@
 						<div class="card-body">
 							<form action="/QLBHXH/userlist" method="GET">
 								<div class="form-group">
-									<label for="namenumber" class="card-text">Số lượng: </label>
-									<select id="namenumber" class="form-control" name="limit">
-										<option value="100">100</option>
-										<option value="200">200</option>
-										<option value="500">500</option>
-										<option value="0">Tất cả</option>
+									<label for="namenumber" class="card-text">Loại bảo hiểm: </label>
+									<select id="namenumber" class="form-control" name="insuranceType">
+										<option value="required">Bắt buộc</option>
+										<option value="willing">Tự nguyện</option>
 									</select>
 								</div>
 								<button type="submit" class="btn btn-primary" style="display: block; margin : 0 auto">Hiện danh sách</button>
